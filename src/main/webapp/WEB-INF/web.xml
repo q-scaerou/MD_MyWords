@@ -2,17 +2,26 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
   <servlet>
     <description></description>
-    <display-name>Accueil</display-name>
-    <servlet-name>Accueil</servlet-name>
-    <servlet-class>fr.corell.mdmywords.c.Accueil</servlet-class>
+    <display-name>Home</display-name>
+    <servlet-name>Home</servlet-name>
+    <servlet-class>fr.corell.mdmywords.c.Home</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Accueil</servlet-name>
-    <url-pattern>/accueil</url-pattern>
+    <servlet-name>Home</servlet-name>
+    <url-pattern>/home</url-pattern>
   </servlet-mapping>
   <display-name>MD_MyWords</display-name>
   <welcome-file-list>
-    <welcome-file>accueil</welcome-file>
-    
+    <welcome-file>home</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Editor</display-name>
+    <servlet-name>Editor</servlet-name>
+    <servlet-class>fr.corell.mdmywords.c.Editor</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Editor</servlet-name>
+    <url-pattern>/editor</url-pattern>
+  </servlet-mapping>
 </web-app>
