@@ -14,7 +14,7 @@
 <body>
 	<h1>Accueil</h1>
 	
-	<a href="editor">editor</a>
+	<a class="btn btn-primary" href="editor">editor</a>
 
 </body>
 </html>

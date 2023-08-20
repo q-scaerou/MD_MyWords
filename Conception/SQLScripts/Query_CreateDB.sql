@@ -1,0 +1,17 @@
+USE master;
+
+DROP DATABASE IF EXISTS MDMW_DB;
+GO
+
+CREATE DATABASE MDMW_DB;
+GO
+
+USE MDMW_DB;
+
+DROP TABLE IF EXISTS Notebooks;
+GO
+
+CREATE TABLE Notebooks (
+	idNotebook int,
+	noteBookName VARCHAR(50)
+);
