@@ -7,7 +7,7 @@ public class Note implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private int idNote;
-	private NoteBook noteBook;
+	private Notebook noteBook;
 	private String text;
 	
 	public int getIdNote() {
@@ -16,10 +16,10 @@ public class Note implements Serializable {
 	public void setIdNote(int idNote) {
 		this.idNote = idNote;
 	}
-	public NoteBook getNoteBook() {
+	public Notebook getNoteBook() {
 		return noteBook;
 	}
-	public void setNoteBook(NoteBook noteBook) {
+	public void setNoteBook(Notebook noteBook) {
 		this.noteBook = noteBook;
 	}
 	public String getText() {

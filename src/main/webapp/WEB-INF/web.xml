@@ -24,4 +24,14 @@
     <servlet-name>Editor</servlet-name>
     <url-pattern>/editor</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Notebooks</display-name>
+    <servlet-name>Notebooks</servlet-name>
+    <servlet-class>fr.corell.mdmywords.c.Notebooks</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Notebooks</servlet-name>
+    <url-pattern>/notebooks</url-pattern>
+  </servlet-mapping>
 </web-app>

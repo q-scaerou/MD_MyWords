@@ -3,28 +3,29 @@ package fr.corell.mdmywords.m.bo;
 import java.io.Serializable;
 import java.time.LocalDate;
 
-public class NoteBook implements Serializable {
+public class Notebook implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private int idNoteBook;
-	private String noteBookName;
+	private int idNotebook;
+	private String notebookName;
 	private LocalDate creationDate;
 	private LocalDate modifyDate;
 	private String shareLink;
 	private Group group;
 	private boolean isActive;
-	public int getIdNoteBook() {
-		return idNoteBook;
+	
+	public int getIdNotebook() {
+		return idNotebook;
 	}
-	public void setIdNoteBook(int idNoteBook) {
-		this.idNoteBook = idNoteBook;
+	public void setIdNotebook(int idNotebook) {
+		this.idNotebook = idNotebook;
 	}
-	public String getNoteBookName() {
-		return noteBookName;
+	public String getNotebookName() {
+		return notebookName;
 	}
-	public void setNoteBookName(String noteBookName) {
-		this.noteBookName = noteBookName;
+	public void setNotebookName(String notebookName) {
+		this.notebookName = notebookName;
 	}
 	public LocalDate getCreationDate() {
 		return creationDate;
@@ -57,11 +58,17 @@ public class NoteBook implements Serializable {
 		this.isActive = isActive;
 	}
 	
-	public NoteBook() {}
+	public Notebook() {}
+	
+	public Notebook(int idNotebook, String notebookName) {
+		this();
+		this.idNotebook = idNotebook;
+		this.notebookName = notebookName;
+	}
 	
 	@Override
 	public String toString() {
-		return "NoteBook [idNoteBook=" + idNoteBook + ", noteBookName=" + noteBookName + ", creationDate="
+		return "NoteBook [idNoteBook=" + idNotebook + ", noteBookName=" + notebookName + ", creationDate="
 				+ creationDate + ", modifyDate=" + modifyDate + ", shareLink=" + shareLink + ", group=" + group
 				+ ", isActive=" + isActive + "]";
 	}
