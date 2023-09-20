@@ -7,25 +7,29 @@ public class Notebook implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private int idNotebook;
-	private String notebookName;
+	
+	// ATTRIBUTES
+	private int id;
+	private String name;
 	private LocalDate creationDate;
 	private LocalDate modifyDate;
 	private String shareLink;
 	private Group group;
 	private boolean isActive;
 	
-	public int getIdNotebook() {
-		return idNotebook;
+	
+	// GETTERS AND SETTERS
+	public int getId() {
+		return id;
 	}
-	public void setIdNotebook(int idNotebook) {
-		this.idNotebook = idNotebook;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getNotebookName() {
-		return notebookName;
+	public String getName() {
+		return name;
 	}
-	public void setNotebookName(String notebookName) {
-		this.notebookName = notebookName;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public LocalDate getCreationDate() {
 		return creationDate;
@@ -58,17 +62,21 @@ public class Notebook implements Serializable {
 		this.isActive = isActive;
 	}
 	
+	
+	// CONSTRUCTORS
 	public Notebook() {}
 	
-	public Notebook(int idNotebook, String notebookName) {
+	public Notebook(int id, String name) {
 		this();
-		this.idNotebook = idNotebook;
-		this.notebookName = notebookName;
+		this.id = id;
+		this.name = name;
 	}
 	
+	
+	// TO STRING
 	@Override
 	public String toString() {
-		return "NoteBook [idNoteBook=" + idNotebook + ", noteBookName=" + notebookName + ", creationDate="
+		return "NoteBook [idNoteBook=" + id + ", noteBookName=" + name + ", creationDate="
 				+ creationDate + ", modifyDate=" + modifyDate + ", shareLink=" + shareLink + ", group=" + group
 				+ ", isActive=" + isActive + "]";
 	}

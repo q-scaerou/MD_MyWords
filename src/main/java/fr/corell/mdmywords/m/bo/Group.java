@@ -1,32 +1,61 @@
 package fr.corell.mdmywords.m.bo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Group implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private int idGroup;
-	private String groupName;
 	
-	public int getIdGroup() {
-		return idGroup;
+	// ATTRIBUTES
+	private int id;
+	private String name;
+	private List<User> users = new ArrayList<User>();
+	
+	
+	// GETTERS AND SETTERS
+	public int getId() {
+		return id;
 	}
-	public void setIdGroup(int idGroup) {
-		this.idGroup = idGroup;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getGroupName() {
-		return groupName;
+
+	public String getName() {
+		return name;
 	}
-	public void setGroupName(String groupName) {
-		this.groupName = groupName;
+
+	public void setName(String name) {
+		this.name = name;
 	}
 	
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
+	
+	
+	// SPECIFIC METHODS
+	public void addUser(User user) {
+		this.users.add(user);
+	}
+
+	
+	// CONSTRUCTORS
 	public Group() {}
 	
+	
+	// TO STRING
 	@Override
 	public String toString() {
-		return "Group [idGroup=" + idGroup + ", groupName=" + groupName + "]";
+		return "Group [idGroup=" + id + ", groupName=" + name + "]";
 	}
 
 }

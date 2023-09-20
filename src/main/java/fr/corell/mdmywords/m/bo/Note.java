@@ -6,21 +6,25 @@ public class Note implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	private int idNote;
-	private Notebook noteBook;
+	
+	// ATTRIBUTES
+	private int id;
+	private Notebook notebook;
 	private String text;
 	
-	public int getIdNote() {
-		return idNote;
+	
+	// GETTERS AND SETTERS
+	public int getId() {
+		return id;
 	}
-	public void setIdNote(int idNote) {
-		this.idNote = idNote;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public Notebook getNoteBook() {
-		return noteBook;
+	public Notebook getNotebook() {
+		return notebook;
 	}
-	public void setNoteBook(Notebook noteBook) {
-		this.noteBook = noteBook;
+	public void setNotebook(Notebook notebook) {
+		this.notebook = notebook;
 	}
 	public String getText() {
 		return text;
@@ -29,11 +33,15 @@ public class Note implements Serializable {
 		this.text = text;
 	}
 	
+	
+	// CONSTRUCTORS
 	public Note() {}
 	
+	
+	// TO STRING
 	@Override
 	public String toString() {
-		return "Note [idNote=" + idNote + ", noteBook=" + noteBook + ", text=" + text + "]";
+		return "Note [idNote=" + id + ", noteBook=" + notebook + ", text=" + text + "]";
 	}
 
 }
