@@ -13,7 +13,9 @@ public class GroupManager {
 		if (instance == null) {
 			instance = new GroupManager();
 		}
+		
 		return instance;
+		
 	}
 	
 	public Group select(int id) {

@@ -13,6 +13,7 @@ public class GroupDAOJdbcImpl implements GroupDAO {
 	public Group select(int id) {
 
 		String selectIdSQL = "SELECT id, name FROM GROUP WHERE id = ?;";
+		
 		Group group = null;
 		
 		PreparedStatement pStmt = null;
@@ -37,6 +38,7 @@ public class GroupDAOJdbcImpl implements GroupDAO {
 			sqle.printStackTrace();
 			
 		} finally {
+			
 			if (pStmt != null) {
 				try {
 					pStmt.close();
@@ -45,6 +47,7 @@ public class GroupDAOJdbcImpl implements GroupDAO {
 					e.printStackTrace();
 				}
 			}
+			
 		}
 		
 		

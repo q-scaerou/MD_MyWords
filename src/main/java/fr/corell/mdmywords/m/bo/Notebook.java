@@ -7,7 +7,6 @@ public class Notebook implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	
 	// ATTRIBUTES
 	private int id;
 	private String name;
@@ -65,12 +64,6 @@ public class Notebook implements Serializable {
 	
 	// CONSTRUCTORS
 	public Notebook() {}
-	
-	public Notebook(int id, String name) {
-		this();
-		this.id = id;
-		this.name = name;
-	}
 	
 	
 	// TO STRING

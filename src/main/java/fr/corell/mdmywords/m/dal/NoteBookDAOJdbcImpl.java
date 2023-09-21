@@ -21,6 +21,7 @@ public class NoteBookDAOJdbcImpl implements NoteBookDAO {
 		List<Notebook> notebooks = new ArrayList<Notebook>();
 		
 		Statement stmt = null;
+		
 		try (Connection cnx = ConnectionProvider.getConnection()) {
 			stmt = cnx.createStatement();
 			
@@ -40,12 +41,14 @@ public class NoteBookDAOJdbcImpl implements NoteBookDAO {
 				n.setIsActive(rs.getBoolean("isActive"));
 				
 				notebooks.add(n);
-				
 			}
 			
 		} catch (SQLException sqle) {
+			System.out.println("ERROR WHEN SELECTING ALL NOTEBOOKS FROM DB");
 			sqle.printStackTrace();
+			
 		} finally {
+			
 			if (stmt != null) {
 				try {
 					stmt.close();
@@ -54,9 +57,11 @@ public class NoteBookDAOJdbcImpl implements NoteBookDAO {
 					e.printStackTrace();
 				}
 			}
+			
 		}
 		
 		return notebooks;
+		
 	}
 
 }

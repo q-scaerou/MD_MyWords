@@ -10,7 +10,9 @@ public class NoteBookManager {
 		if (instance == null) {
 			instance = new NoteBookManager();
 		}
+		
 		return instance;
+		
 	}
 	
 }

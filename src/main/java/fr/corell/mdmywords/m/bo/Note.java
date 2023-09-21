@@ -6,7 +6,6 @@ public class Note implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	
-	
 	// ATTRIBUTES
 	private int id;
 	private Notebook notebook;
