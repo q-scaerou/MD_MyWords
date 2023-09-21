@@ -9,7 +9,7 @@ public class User implements Serializable {
 	
 	// ATTRIBUTES
 	private int idUser;
-	private String userName;
+	private String username;
 	private String mail;
 	private String password;
 	private boolean isAdmin;
@@ -25,12 +25,12 @@ public class User implements Serializable {
 		this.idUser = idUser;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUsername() {
+		return username;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getMail() {
@@ -82,7 +82,7 @@ public class User implements Serializable {
 	// TO STRING
 	@Override
 	public String toString() {
-		return "User [idUser=" + idUser + ", userName=" + userName + ", admin=" + isAdmin + ", groups="
+		return "User [idUser=" + idUser + ", username=" + username + ", admin=" + isAdmin + ", groups="
 				+ groups + "]";
 	}
 
