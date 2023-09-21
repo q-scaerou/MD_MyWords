@@ -1,5 +1,7 @@
 package fr.corell.mdmywords.m.bll;
 
+import fr.corell.mdmywords.m.dal.DAOFactory;
+
 public class UserManager {
 	
 	private static UserManager instance;
@@ -13,6 +15,8 @@ public class UserManager {
 		return instance;
 	}
 	
-	
+	public void initDataset() {
+		DAOFactory.getUserDAO().initDataset();
+	}
 
 }

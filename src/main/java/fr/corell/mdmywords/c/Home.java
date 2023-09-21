@@ -7,10 +7,19 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import fr.corell.mdmywords.m.bll.UserManager;
+
 
 public class Home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
+	@Override
+	public void init() throws ServletException {
+		
+		//UserManager.getInstance().initDataset();
+		
+	}
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/accueil.jsp");

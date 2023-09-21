@@ -34,7 +34,7 @@ public class UserDAOJdbcImpl implements UserDAO {
 	
 	public void insert(User user) {
 		
-		String insertSQL = "INSERT INTO USER (username, mail, password, isAdmin VALUES (?, ?, ?, ?);";
+		String insertSQL = "INSERT INTO APP_USER (username, mail, password, isAdmin) VALUES (?, ?, ?, ?);";
 		
 		PreparedStatement pStmt = null;
 		
@@ -49,11 +49,13 @@ public class UserDAOJdbcImpl implements UserDAO {
 			pStmt.setString(3, hashedPassword);
 			pStmt.setBoolean(4, user.getIsAdmin());
 			
-			ResultSet rs = pStmt.executeQuery();
+			pStmt.executeUpdate();
+			
+			ResultSet rs = pStmt.getGeneratedKeys();
 			if (rs.next()) {
 				user.setIdUser(rs.getInt(1));
 			}
-			
+						
 		} catch (SQLException sqle) {
 			
 			System.out.println("ERROR ON INSERT USER=" + user);
