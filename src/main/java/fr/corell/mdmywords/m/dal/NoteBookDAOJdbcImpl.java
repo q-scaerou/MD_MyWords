@@ -13,17 +13,18 @@ import fr.corell.mdmywords.m.bo.Notebook;
 
 public class NoteBookDAOJdbcImpl implements NoteBookDAO {
 	
-	private static final String SELECT_ALL = "SELECT id, name, creationDate, modifyDate, shareLink, group, isActive from Notebooks;";
-
 	@Override
 	public List<Notebook> selectAll() {
+		
+		String selectAllSQL = "SELECT id, name, creationDate, modifyDate, shareLink, group, isActive from Notebooks;";
+		
 		List<Notebook> notebooks = new ArrayList<Notebook>();
 		
 		Statement stmt = null;
 		try (Connection cnx = ConnectionProvider.getConnection()) {
 			stmt = cnx.createStatement();
 			
-			ResultSet rs = stmt.executeQuery(SELECT_ALL);
+			ResultSet rs = stmt.executeQuery(selectAllSQL);
 			
 			while (rs.next()) {				
 				Notebook n = new Notebook();
