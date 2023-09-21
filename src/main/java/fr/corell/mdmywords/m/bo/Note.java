@@ -9,7 +9,7 @@ public class Note implements Serializable {
 	// ATTRIBUTES
 	private int id;
 	private Notebook notebook;
-	private String text;
+	private String content;
 	
 	
 	// GETTERS AND SETTERS
@@ -25,11 +25,11 @@ public class Note implements Serializable {
 	public void setNotebook(Notebook notebook) {
 		this.notebook = notebook;
 	}
-	public String getText() {
-		return text;
+	public String getContent() {
+		return content;
 	}
-	public void setText(String text) {
-		this.text = text;
+	public void setContent(String content) {
+		this.content = content;
 	}
 	
 	
@@ -40,7 +40,7 @@ public class Note implements Serializable {
 	// TO STRING
 	@Override
 	public String toString() {
-		return "Note [idNote=" + id + ", noteBook=" + notebook + ", text=" + text + "]";
+		return "Note [idNote=" + id + ", noteBook=" + notebook + ", content=" + content + "]";
 	}
 
 }

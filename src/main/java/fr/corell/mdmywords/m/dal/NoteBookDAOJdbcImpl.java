@@ -30,9 +30,9 @@ public class NoteBookDAOJdbcImpl implements NoteBookDAO {
 			while (rs.next()) {				
 				Notebook n = new Notebook();
 				n.setId(rs.getInt("id"));
-				n.setName(rs.getString("name"));
+				n.setTitle(rs.getString("name"));
 				n.setCreationDate(rs.getDate("creationDate").toLocalDate());
-				n.setModifyDate(rs.getDate("creationDate").toLocalDate());
+				n.setModificationDate(rs.getDate("creationDate").toLocalDate());
 				n.setShareLink(rs.getString("shareLink"));
 				
 				Group group = GroupManager.getInstance().select(rs.getInt("group"));

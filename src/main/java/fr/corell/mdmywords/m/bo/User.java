@@ -1,7 +1,6 @@
 package fr.corell.mdmywords.m.bo;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.List;
 
 public class User implements Serializable {
@@ -13,7 +12,7 @@ public class User implements Serializable {
 	private String userName;
 	private String mail;
 	private String password;
-	private String[] role;
+	private boolean isAdmin;
 	private List<Group> groups;
 	
 	
@@ -50,12 +49,12 @@ public class User implements Serializable {
 		this.password = password;
 	}
 
-	public String[] getRole() {
-		return role;
+	public boolean getIsAdmin() {
+		return isAdmin;
 	}
 
-	public void setRole(String[] role) {
-		this.role = role;
+	public void setIsAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
 	}
 
 	public List<Group> getGroups() {
@@ -71,6 +70,9 @@ public class User implements Serializable {
 	public void addGroup(Group group) {
 		this.groups.add(group);
 	}
+	public boolean switchAdmin() {
+		return !isAdmin;
+	}
 
 	
 	// CONSTRUCTORS
@@ -80,7 +82,7 @@ public class User implements Serializable {
 	// TO STRING
 	@Override
 	public String toString() {
-		return "User [idUser=" + idUser + ", userName=" + userName + ", role=" + Arrays.toString(role) + ", groups="
+		return "User [idUser=" + idUser + ", userName=" + userName + ", admin=" + isAdmin + ", groups="
 				+ groups + "]";
 	}
 

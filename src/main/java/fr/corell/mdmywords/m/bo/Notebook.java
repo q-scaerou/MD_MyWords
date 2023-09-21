@@ -9,9 +9,9 @@ public class Notebook implements Serializable {
 	
 	// ATTRIBUTES
 	private int id;
-	private String name;
+	private String title;
 	private LocalDate creationDate;
-	private LocalDate modifyDate;
+	private LocalDate modificationDate;
 	private String shareLink;
 	private Group group;
 	private boolean isActive;
@@ -24,11 +24,11 @@ public class Notebook implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public LocalDate getCreationDate() {
 		return creationDate;
@@ -36,11 +36,11 @@ public class Notebook implements Serializable {
 	public void setCreationDate(LocalDate creationDate) {
 		this.creationDate = creationDate;
 	}
-	public LocalDate getModifyDate() {
-		return modifyDate;
+	public LocalDate getModificationDate() {
+		return modificationDate;
 	}
-	public void setModifyDate(LocalDate modifyDate) {
-		this.modifyDate = modifyDate;
+	public void setModificationDate(LocalDate modificationDate) {
+		this.modificationDate = modificationDate;
 	}
 	public String getShareLink() {
 		return shareLink;
@@ -69,8 +69,8 @@ public class Notebook implements Serializable {
 	// TO STRING
 	@Override
 	public String toString() {
-		return "NoteBook [idNoteBook=" + id + ", noteBookName=" + name + ", creationDate="
-				+ creationDate + ", modifyDate=" + modifyDate + ", shareLink=" + shareLink + ", group=" + group
+		return "NoteBook [idNoteBook=" + id + ", title=" + title + ", creationDate="
+				+ creationDate + ", modificationDate=" + modificationDate + ", shareLink=" + shareLink + ", group=" + group
 				+ ", isActive=" + isActive + "]";
 	}
 	
