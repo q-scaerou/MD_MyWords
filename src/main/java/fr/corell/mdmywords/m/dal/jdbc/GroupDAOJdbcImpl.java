@@ -1,4 +1,4 @@
-package fr.corell.mdmywords.m.dal;
+package fr.corell.mdmywords.m.dal.jdbc;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import fr.corell.mdmywords.m.bo.Group;
+import fr.corell.mdmywords.m.dal.ConnectionProvider;
+import fr.corell.mdmywords.m.dal.GroupDAO;
 
 public class GroupDAOJdbcImpl implements GroupDAO {
 

@@ -1,4 +1,4 @@
-package fr.corell.mdmywords.m.dal;
+package fr.corell.mdmywords.m.dal.jdbc;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -10,6 +10,8 @@ import java.util.List;
 import fr.corell.mdmywords.m.bll.GroupManager;
 import fr.corell.mdmywords.m.bo.Group;
 import fr.corell.mdmywords.m.bo.Notebook;
+import fr.corell.mdmywords.m.dal.ConnectionProvider;
+import fr.corell.mdmywords.m.dal.NoteBookDAO;
 
 public class NoteBookDAOJdbcImpl implements NoteBookDAO {
 	
