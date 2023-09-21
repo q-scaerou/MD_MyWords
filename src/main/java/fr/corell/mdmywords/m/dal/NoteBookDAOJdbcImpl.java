@@ -7,11 +7,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.corell.mdmywords.m.bll.GroupManager;
+import fr.corell.mdmywords.m.bo.Group;
 import fr.corell.mdmywords.m.bo.Notebook;
 
 public class NoteBookDAOJdbcImpl implements NoteBookDAO {
 	
-	private static final String SELECT_ALL = "SELECT * from Notebooks;";
+	private static final String SELECT_ALL = "SELECT id, name, creationDate, modifyDate, shareLink, group, isActive from Notebooks;";
 
 	@Override
 	public List<Notebook> selectAll() {
@@ -23,12 +25,21 @@ public class NoteBookDAOJdbcImpl implements NoteBookDAO {
 			
 			ResultSet rs = stmt.executeQuery(SELECT_ALL);
 			
-			while (rs.next()) {
-				int idNotebook = rs.getInt("idNotebook");
-				String notebookName = rs.getString("notebookName");
+			while (rs.next()) {				
+				Notebook n = new Notebook();
+				n.setId(rs.getInt("id"));
+				n.setName(rs.getString("name"));
+				n.setCreationDate(rs.getDate("creationDate").toLocalDate());
+				n.setModifyDate(rs.getDate("creationDate").toLocalDate());
+				n.setShareLink(rs.getString("shareLink"));
 				
-				Notebook n = new Notebook(idNotebook, notebookName);
+				Group group = GroupManager.getInstance().select(rs.getInt("group"));
+				n.setGroup(group);
+				
+				n.setIsActive(rs.getBoolean("isActive"));
+				
 				notebooks.add(n);
+				
 			}
 			
 		} catch (SQLException sqle) {
