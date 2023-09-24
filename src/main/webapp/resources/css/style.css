@@ -1,2 +1,9 @@
 @charset "UTF-8";
 
+#logo {
+	width: 7vh;
+	height: auto;
+}
+#quill-space {
+	height: 75vh;
+}

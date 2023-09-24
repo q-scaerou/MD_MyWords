@@ -18,7 +18,7 @@ public class NoteBookDAOJdbcImpl implements NoteBookDAO {
 	@Override
 	public List<Notebook> selectAll() {
 		
-		String selectAllSQL = "SELECT id, name, creationDate, modifyDate, shareLink, group, isActive from Notebooks;";
+		String selectAllSQL = "SELECT id, title, creationDate, modificationDate, sharelink, id_group, isActive from Notebooks;";
 		
 		List<Notebook> notebooks = new ArrayList<Notebook>();
 		
