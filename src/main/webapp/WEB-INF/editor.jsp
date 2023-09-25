@@ -67,14 +67,21 @@
 		</div>
 	</nav>
 	<div id="quill-space" class="col-10 mx-auto justify-content-center">
-	
-	
+		
+		<form method="POST" action="editor" id="textEditor">
+		<input type="text" name="title" id="title" placeholder="Notebook title" class="my-2">
 		<!-- Create the editor container -->
 		<div id="editor">
 		  <p>Hello World!</p>
 		</div>
 		
-		<button class="btn btn-secondary" type="button" onclick="getEditorContent()">Clic!</button>
+			<input type="hidden" value="" id="rawText" name="rawText">
+			<div class="my-5">
+				<button class="btn btn-success" type="button" onclick="getEditorContent()">Enregistrer la note</button>
+				<button class="btn btn-secondary" type="button" onclick="alert('ajout')">Ajouter une page</button>
+				<button class="btn btn-danger" type="button" onclick="alert('delete')">Supprimer la note</button>
+			</div>
+		</form>
 	
 	</div>
 	
