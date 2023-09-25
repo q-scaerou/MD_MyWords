@@ -76,7 +76,7 @@ public class TranslatorToMD {
 		htmlText = htmlText.replace("<pre spellcheck=\"false\">", htmlElementToMD.get("<pre spellcheck=\"false\">"));
 		htmlText = htmlText.replace("</pre>", htmlElementToMD.get("</pre>"));
 		
-		// Dealing with link
+		// Dealing with links
 		int countLinks = 0;
 		for (int i = 0; i < htmlText.length() - 8; i++) {
 			StringBuilder sb = new StringBuilder();
@@ -109,6 +109,7 @@ public class TranslatorToMD {
 				}
 				
 				links.add(link.trim());
+				
 			}	
 			
 			for (String currentLink : links) {
@@ -122,12 +123,47 @@ public class TranslatorToMD {
 				sb.append(")");
 				
 				htmlText = htmlText.replace(currentLink, sb.toString());
+				
 			}
 			
 		}
 		
-		// Dealing with lists
+		// Dealing with unordered lists
+		int countUnorderedLists = 0;
+		for (int i = 0; i < htmlText.length() - 8; i++) {
+			StringBuilder sb = new StringBuilder();
+			sb.append(htmlText.charAt(i));
+			sb.append(htmlText.charAt(i + 1));
+			sb.append(htmlText.charAt(i + 2));
+			sb.append(htmlText.charAt(i + 3));
+			if (sb.toString().equals("<ul>")) {
+				countUnorderedLists++;
+			}
+		}
 		
+		if (countUnorderedLists > 0) {
+			// TODO time to code it :D
+		}
+		
+		
+		// Dealing with ordered lists
+				int countOrderedLists = 0;
+				for (int i = 0; i < htmlText.length() - 8; i++) {
+					StringBuilder sb = new StringBuilder();
+					sb.append(htmlText.charAt(i));
+					sb.append(htmlText.charAt(i + 1));
+					sb.append(htmlText.charAt(i + 2));
+					sb.append(htmlText.charAt(i + 3));
+					if (sb.toString().equals("<ul>")) {
+						countOrderedLists++;
+					}
+				}
+				
+				if (countOrderedLists > 0) {
+					// TODO time to code it :D
+				}
+		
+				
 		return htmlText;
 		
 	}
