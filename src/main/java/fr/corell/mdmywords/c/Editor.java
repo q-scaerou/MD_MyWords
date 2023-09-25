@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
 
+import fr.corell.mdmywords.m.tools.TranslatorToMD;
+
 
 public class Editor extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -27,6 +29,11 @@ public class Editor extends HttpServlet {
 		System.out.println(creationDate);
 		System.out.println(notebookTitle);
 		System.out.println(rawText);
+		
+		System.out.println("Trying translation ->");
+		String test = TranslatorToMD.getInstance().translateMD(rawText);
+		System.out.println(test);
+		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("notebooks");
 		rd.forward(request, response);

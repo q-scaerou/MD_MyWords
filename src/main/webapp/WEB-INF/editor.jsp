@@ -92,10 +92,12 @@
 	<!-- Initialize Quill editor -->
 	<script>
 		var toolbarOptions = [
-			  ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+			  ['bold', 'italic', 'underline'],        // toggled buttons
 			  ['blockquote', 'code-block'],
 	
 			  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+			  
+			  ['link'],
 	
 			  [{ 'header': [1, 2, 3, 4, false] }],
 			  
