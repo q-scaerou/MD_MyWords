@@ -12,5 +12,7 @@ function getEditorContent() {
 	*  need to be updated also.
 	*/
 	let editorRawText = editorFullRawText.substring(46, editorFullRawText.length - 314);
-	alert(editorRawText);
+	document.getElementById('rawText').value = editorRawText;
+	document.getElementById('textEditorForm').submit();
+	
 }

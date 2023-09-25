@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.time.LocalDateTime;
 
 
 public class Editor extends HttpServlet {
@@ -20,7 +21,15 @@ public class Editor extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		doGet(request, response);
+		LocalDateTime creationDate = LocalDateTime.now();
+		String notebookTitle = request.getParameter("title");
+		String rawText = request.getParameter("rawText");
+		System.out.println(creationDate);
+		System.out.println(notebookTitle);
+		System.out.println(rawText);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("notebooks");
+		rd.forward(request, response);
 		
 	}
 

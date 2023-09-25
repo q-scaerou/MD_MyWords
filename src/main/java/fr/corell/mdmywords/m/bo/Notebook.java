@@ -12,7 +12,7 @@ public class Notebook implements Serializable {
 	private String title;
 	private LocalDate creationDate;
 	private LocalDate modificationDate;
-	private String shareLink;
+	private String link;
 	private Group group;
 	private boolean isActive;
 	
@@ -42,11 +42,11 @@ public class Notebook implements Serializable {
 	public void setModificationDate(LocalDate modificationDate) {
 		this.modificationDate = modificationDate;
 	}
-	public String getShareLink() {
-		return shareLink;
+	public String getLink() {
+		return link;
 	}
-	public void setShareLink(String shareLink) {
-		this.shareLink = shareLink;
+	public void setLink(String link) {
+		this.link = link;
 	}
 	public Group getGroup() {
 		return group;
@@ -70,7 +70,7 @@ public class Notebook implements Serializable {
 	@Override
 	public String toString() {
 		return "NoteBook [idNoteBook=" + id + ", title=" + title + ", creationDate="
-				+ creationDate + ", modificationDate=" + modificationDate + ", shareLink=" + shareLink + ", group=" + group
+				+ creationDate + ", modificationDate=" + modificationDate + ", link=" + link + ", group=" + group
 				+ ", isActive=" + isActive + "]";
 	}
 	

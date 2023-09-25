@@ -68,8 +68,9 @@
 	</nav>
 	<div id="quill-space" class="col-10 mx-auto justify-content-center">
 		
-		<form method="POST" action="editor" id="textEditor">
-		<input type="text" name="title" id="title" placeholder="Notebook title" class="my-2">
+		<form method="POST" action="editor" id="textEditorForm">
+		<label for="title">Title:</label>
+		<input type="text" name="title" id="title" value="New Notebook" class="my-2">
 		<!-- Create the editor container -->
 		<div id="editor">
 		  <p>Hello World!</p>

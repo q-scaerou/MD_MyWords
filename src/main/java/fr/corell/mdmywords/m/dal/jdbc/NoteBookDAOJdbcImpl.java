@@ -18,7 +18,7 @@ public class NoteBookDAOJdbcImpl implements NoteBookDAO {
 	@Override
 	public List<Notebook> selectAll() {
 		
-		String selectAllSQL = "SELECT id, title, creationDate, modificationDate, sharelink, id_group, isActive from Notebooks;";
+		String selectAllSQL = "SELECT id, title, creationDate, modificationDate, link, id_group, isActive FROM Notebook;";
 		
 		List<Notebook> notebooks = new ArrayList<Notebook>();
 		
@@ -35,7 +35,7 @@ public class NoteBookDAOJdbcImpl implements NoteBookDAO {
 				n.setTitle(rs.getString("name"));
 				n.setCreationDate(rs.getDate("creationDate").toLocalDate());
 				n.setModificationDate(rs.getDate("creationDate").toLocalDate());
-				n.setShareLink(rs.getString("shareLink"));
+				n.setLink(rs.getString("link"));
 				
 				Group group = GroupManager.getInstance().select(rs.getInt("group"));
 				n.setGroup(group);
