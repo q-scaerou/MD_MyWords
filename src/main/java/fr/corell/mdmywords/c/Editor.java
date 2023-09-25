@@ -26,9 +26,9 @@ public class Editor extends HttpServlet {
 		LocalDateTime creationDate = LocalDateTime.now();
 		String notebookTitle = request.getParameter("title");
 		String rawText = request.getParameter("rawText");
-		System.out.println(creationDate);
-		System.out.println(notebookTitle);
-		System.out.println(rawText);
+//		System.out.println(creationDate);
+//		System.out.println(notebookTitle);
+//		System.out.println(rawText);
 		
 		System.out.println("Trying translation ->");
 		String test = TranslatorToMD.getInstance().translateMD(rawText);
