@@ -191,9 +191,33 @@ public class TranslatorToMD {
 				}
 				
 				if (countOrderedLists > 0) {
-					// TODO time to code it :D
+					List<String> orderedLists = new ArrayList<String>();
+					String list = "";
+					String croppedText = htmlText;
+					for (int i = 0; i < countOrderedLists; i++) {
+						int currentIndex = croppedText.indexOf("<ol>");
+						croppedText = croppedText.substring(currentIndex);
+						list = croppedText.substring(0, croppedText.indexOf("</ol>") + 5);
+						
+						if (currentIndex + 1 <= croppedText.length()) {
+							croppedText = croppedText.substring(currentIndex + 1);
+						}
+						orderedLists.add(list.trim());
+					}
+					int count = 1;
+					for (String currentList : orderedLists) {
+						String tmpList = currentList;
+						currentList = currentList.replace("<ol>", htmlElementToMD.get("<ol>"));
+						currentList = currentList.replace("</ol>", htmlElementToMD.get("</ol>"));
+						currentList = currentList.replace("</li>", htmlElementToMD.get("</li>"));
+						currentList = currentList.replace("<li>", count + ". ");
+						
+						htmlText = htmlText.replace(tmpList, currentList);
+						count++;
+						
+					}
+					
 				}
-		
 				
 		return htmlText;
 		
