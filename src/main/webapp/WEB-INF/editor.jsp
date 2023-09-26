@@ -73,7 +73,7 @@
 		<input type="text" name="title" id="title" value="New Notebook" class="my-2">
 		<!-- Create the editor container -->
 		<div id="editor">
-		  <p>Hello World!</p>
+		  <p>Your text here!</p>
 		</div>
 		
 			<input type="hidden" value="" id="rawText" name="rawText">

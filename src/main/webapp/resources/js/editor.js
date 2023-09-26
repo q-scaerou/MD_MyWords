@@ -12,7 +12,7 @@ function getEditorContent() {
 	*  IMPORTANT: in case of Quill API update, it will be necessary to check if these values 
 	*  need to be updated also.
 	*/
-	let editorRawText = editorFullRawText.substring(46, editorFullRawText.lastIndexOf('</p>') + 4);
+	let editorRawText = editorFullRawText.substring(46, editorFullRawText.length - 314);
 	document.getElementById('rawText').value = editorRawText;
 	alert(editorRawText);
 	document.getElementById('textEditorForm').submit();
