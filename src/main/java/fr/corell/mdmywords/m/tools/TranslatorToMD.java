@@ -22,27 +22,31 @@ public class TranslatorToMD {
 	}
 	
 	private void populateHashMap() {
-		
 		htmlElementToMD.put("<h1>", "# ");
-		htmlElementToMD.put("</h1>", "");
+		htmlElementToMD.put("</h1>", System.lineSeparator());
 		htmlElementToMD.put("<h2>", "## ");
-		htmlElementToMD.put("</h2>", "");
+		htmlElementToMD.put("</h2>", System.lineSeparator());
 		htmlElementToMD.put("<h3>", "### ");
-		htmlElementToMD.put("</h3>", "");
+		htmlElementToMD.put("</h3>", System.lineSeparator());
 		htmlElementToMD.put("<h4>", "#### ");
-		htmlElementToMD.put("</h4>", "");
+		htmlElementToMD.put("</h4>", System.lineSeparator());
 		htmlElementToMD.put("<p>", "");
-		htmlElementToMD.put("</p>", "");
+		htmlElementToMD.put("</p>", System.lineSeparator());
 		htmlElementToMD.put("<strong>", "**");
 		htmlElementToMD.put("</strong>", "**");
 		htmlElementToMD.put("<em>", "*");
 		htmlElementToMD.put("</em>", "*");
 		htmlElementToMD.put("<blockquote>", ">");
-		htmlElementToMD.put("</blockquote>", "");
+		htmlElementToMD.put("</blockquote>", System.lineSeparator());
 		htmlElementToMD.put("<pre spellcheck=\"false\">", "`");
-		htmlElementToMD.put("</pre>", "`");
-		
+		htmlElementToMD.put("</pre>", "`" + System.lineSeparator());
+		htmlElementToMD.put("<ul>", "");
+		htmlElementToMD.put("</ul>", "");
+		htmlElementToMD.put("<ol>", "");
+		htmlElementToMD.put("</ol>", "");
+		htmlElementToMD.put("</li>", System.lineSeparator());
 	}
+	
 	public String translateMD(String htmlText) {
 		
 		
@@ -142,7 +146,34 @@ public class TranslatorToMD {
 		}
 		
 		if (countUnorderedLists > 0) {
-			// TODO time to code it :D
+			
+			// STEP 1: Identify and store all unordered lists
+			List<String> unorderedLists = new ArrayList<String>();
+			String list = "";
+			String croppedText = htmlText;
+			for (int i = 0; i < countUnorderedLists; i++) {
+				// Finding next occurrence of <ul> tag
+				int currentIndex = croppedText.indexOf("<ul>");
+				croppedText = croppedText.substring(currentIndex);
+				list = croppedText.substring(0, croppedText.indexOf("</ul>") + 5);
+				
+				if (currentIndex + 1 <= croppedText.length()) {
+					croppedText = croppedText.substring(currentIndex + 1);
+				}
+				unorderedLists.add(list.trim());
+			}
+			
+			for (String currentList : unorderedLists) {
+				String tmpList = currentList;
+				currentList = currentList.replace("<ul>", htmlElementToMD.get("<ul>"));
+				currentList = currentList.replace("</ul>", htmlElementToMD.get("</ul>"));
+				currentList = currentList.replace("</li>", htmlElementToMD.get("</li>"));
+				currentList = currentList.replace("<li>", "- ");
+				
+				htmlText = htmlText.replace(tmpList, currentList);
+						
+			}
+			
 		}
 		
 		
@@ -154,7 +185,7 @@ public class TranslatorToMD {
 					sb.append(htmlText.charAt(i + 1));
 					sb.append(htmlText.charAt(i + 2));
 					sb.append(htmlText.charAt(i + 3));
-					if (sb.toString().equals("<ul>")) {
+					if (sb.toString().equals("<ol>")) {
 						countOrderedLists++;
 					}
 				}
