@@ -7,6 +7,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import fr.corell.mdmywords.m.tools.TranslatorToMD;
 
@@ -25,14 +27,17 @@ public class Editor extends HttpServlet {
 		
 		LocalDateTime creationDate = LocalDateTime.now();
 		String notebookTitle = request.getParameter("title");
-		String rawText = request.getParameter("rawText");
-//		System.out.println(creationDate);
-//		System.out.println(notebookTitle);
+		String formNbPage = request.getParameter("nbPage");
+		int nbPage = Integer.valueOf(formNbPage);
 		
-		String textMarkDown = TranslatorToMD.getInstance().translateMD(rawText);
+		List<String> notes = new ArrayList<String>();
 		
-		System.out.println(textMarkDown);
+		for (int i = 1; i <= nbPage; i++) {
+			notes.add(TranslatorToMD.getInstance().translateMD(request.getParameter("rawText" + nbPage)));
+		}
 		
+		
+				
 		RequestDispatcher rd = request.getRequestDispatcher("notebooks");
 		rd.forward(request, response);
 		

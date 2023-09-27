@@ -76,12 +76,12 @@
 		  <p>Your text here!</p>
 		</div>
 		
-		<input type="hidden" value="" id="rawText" name="rawText">
-		
+		<input type="hidden" value="" id="rawText1" name="rawText1">
+		<input type="hidden" value=1 id="nbPage" name="nbPage">
 		<div class="my-5">
 			<button class="btn btn-success" type="button" onclick="getEditorContent()">Enregistrer la note</button>
 			<button class="btn btn-info" type="button" onclick="saveEditorContent()">Enregistrer sur le PC</button>
-			<button class="btn btn-secondary" type="button" onclick="alert('ajout')" disabled>Ajouter une page</button>
+			<button class="btn btn-secondary" type="button" onclick="addPage()">Ajouter une page</button>
 			<button class="btn btn-danger" type="button" onclick="alert('delete')">Supprimer la note</button>
 		</div>
 		</form>
