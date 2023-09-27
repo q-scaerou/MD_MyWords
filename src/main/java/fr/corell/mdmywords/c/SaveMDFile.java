@@ -26,10 +26,8 @@ public class SaveMDFile extends HttpServlet {
 		}
 		
 		String textMarkDown = TranslatorToMD.getInstance().translateMD(rawText);
-		List<String> lines = Arrays.asList(textMarkDown.split(System.lineSeparator()));
 		FileWriter writer = new FileWriter(System.getProperty("user.home") + "\\desktop\\" + noteTitle + ".md");
 		writer.write(textMarkDown);
-
 		writer.close();
 		
 		RequestDispatcher rd = request.getRequestDispatcher("home");
