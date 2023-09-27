@@ -45,6 +45,7 @@ public class TranslatorToMD {
 		htmlElementToMD.put("<ol>", "");
 		htmlElementToMD.put("</ol>", "");
 		htmlElementToMD.put("</li>", System.lineSeparator());
+		htmlElementToMD.put("<br>", System.lineSeparator());
 	}
 	
 	public String translateMD(String htmlText) {
@@ -79,6 +80,9 @@ public class TranslatorToMD {
 		// Replacing code blocks
 		htmlText = htmlText.replace("<pre spellcheck=\"false\">", htmlElementToMD.get("<pre spellcheck=\"false\">"));
 		htmlText = htmlText.replace("</pre>", htmlElementToMD.get("</pre>"));
+		
+		// Replacing line break
+		htmlText = htmlText.replace("<br>", htmlElementToMD.get("<br>"));
 		
 		// Dealing with links
 		int countLinks = 0;
