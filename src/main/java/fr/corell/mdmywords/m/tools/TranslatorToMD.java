@@ -182,47 +182,49 @@ public class TranslatorToMD {
 		
 		
 		// Dealing with ordered lists
-				int countOrderedLists = 0;
-				for (int i = 0; i < htmlText.length() - 8; i++) {
-					StringBuilder sb = new StringBuilder();
-					sb.append(htmlText.charAt(i));
-					sb.append(htmlText.charAt(i + 1));
-					sb.append(htmlText.charAt(i + 2));
-					sb.append(htmlText.charAt(i + 3));
-					if (sb.toString().equals("<ol>")) {
-						countOrderedLists++;
-					}
-				}
+		int countOrderedLists = 0;
+		for (int i = 0; i < htmlText.length() - 8; i++) {
+			StringBuilder sb = new StringBuilder();
+			sb.append(htmlText.charAt(i));
+			sb.append(htmlText.charAt(i + 1));
+			sb.append(htmlText.charAt(i + 2));
+			sb.append(htmlText.charAt(i + 3));
+			if (sb.toString().equals("<ol>")) {
+				countOrderedLists++;
+			}
+		}
+		
+		if (countOrderedLists > 0) {
+			List<String> orderedLists = new ArrayList<String>();
+			String list = "";
+			String croppedText = htmlText;
+			for (int i = 0; i < countOrderedLists; i++) {
+				int currentIndex = croppedText.indexOf("<ol>");
+				croppedText = croppedText.substring(currentIndex);
+				list = croppedText.substring(0, croppedText.indexOf("</ol>") + 5);
 				
-				if (countOrderedLists > 0) {
-					List<String> orderedLists = new ArrayList<String>();
-					String list = "";
-					String croppedText = htmlText;
-					for (int i = 0; i < countOrderedLists; i++) {
-						int currentIndex = croppedText.indexOf("<ol>");
-						croppedText = croppedText.substring(currentIndex);
-						list = croppedText.substring(0, croppedText.indexOf("</ol>") + 5);
-						
-						if (currentIndex + 1 <= croppedText.length()) {
-							croppedText = croppedText.substring(currentIndex + 1);
-						}
-						orderedLists.add(list.trim());
-					}
-					int count = 1;
-					for (String currentList : orderedLists) {
-						String tmpList = currentList;
-						currentList = currentList.replace("<ol>", htmlElementToMD.get("<ol>"));
-						currentList = currentList.replace("</ol>", htmlElementToMD.get("</ol>"));
-						currentList = currentList.replace("</li>", htmlElementToMD.get("</li>"));
-						currentList = currentList.replace("<li>", count + ". ");
-						
-						htmlText = htmlText.replace(tmpList, currentList);
-						count++;
-						
-					}
-					
+				if (currentIndex + 1 <= croppedText.length()) {
+					croppedText = croppedText.substring(currentIndex + 1);
 				}
+				orderedLists.add(list.trim());
+			}
+			int count = 1;
+			for (String currentList : orderedLists) {
+				String tmpList = currentList;
+				currentList = currentList.replace("<ol>", htmlElementToMD.get("<ol>"));
+				currentList = currentList.replace("</ol>", htmlElementToMD.get("</ol>"));
+				currentList = currentList.replace("</li>", htmlElementToMD.get("</li>"));
+				currentList = currentList.replace("<li>", count + ". ");
 				
+				htmlText = htmlText.replace(tmpList, currentList);
+				count++;
+				
+			}
+			
+		}
+		
+		htmlText = htmlText.substring(0, htmlText.indexOf("</div>"));
+		
 		return htmlText;
 		
 	}
