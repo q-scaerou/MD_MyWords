@@ -76,14 +76,15 @@
 		  <p>Your text here!</p>
 		</div>
 		
-			<input type="hidden" value="" id="rawText" name="rawText">
-			<div class="my-5">
-				<button class="btn btn-success" type="button" onclick="getEditorContent()">Enregistrer la note</button>
-				<button class="btn btn-secondary" type="button" onclick="alert('ajout')">Ajouter une page</button>
-				<button class="btn btn-danger" type="button" onclick="alert('delete')">Supprimer la note</button>
-			</div>
+		<input type="hidden" value="" id="rawText" name="rawText">
+		
+		<div class="my-5">
+			<button class="btn btn-success" type="button" onclick="getEditorContent()">Enregistrer la note</button>
+			<button class="btn btn-info" type="button" onclick="saveEditorContent()">Enregistrer sur le PC</button>
+			<button class="btn btn-secondary" type="button" onclick="alert('ajout')" disabled>Ajouter une page</button>
+			<button class="btn btn-danger" type="button" onclick="alert('delete')">Supprimer la note</button>
+		</div>
 		</form>
-	
 	</div>
 	
 	<!-- Include the Quill library -->

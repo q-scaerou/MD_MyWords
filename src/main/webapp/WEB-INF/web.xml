@@ -34,4 +34,24 @@
     <servlet-name>Notebooks</servlet-name>
     <url-pattern>/notebooks</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>MDReader</display-name>
+    <servlet-name>MDReader</servlet-name>
+    <servlet-class>fr.corell.mdmywords.c.MDReader</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MDReader</servlet-name>
+    <url-pattern>/reader</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SaveMDFile</display-name>
+    <servlet-name>SaveMDFile</servlet-name>
+    <servlet-class>fr.corell.mdmywords.c.SaveMDFile</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveMDFile</servlet-name>
+    <url-pattern>/save</url-pattern>
+  </servlet-mapping>
 </web-app>

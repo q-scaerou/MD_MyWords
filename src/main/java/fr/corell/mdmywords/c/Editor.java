@@ -28,12 +28,10 @@ public class Editor extends HttpServlet {
 		String rawText = request.getParameter("rawText");
 //		System.out.println(creationDate);
 //		System.out.println(notebookTitle);
-//		System.out.println(rawText);
 		
-		System.out.println("Trying translation ->");
-		String test = TranslatorToMD.getInstance().translateMD(rawText);
-		System.out.println(test);
+		String textMarkDown = TranslatorToMD.getInstance().translateMD(rawText);
 		
+		System.out.println(textMarkDown);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("notebooks");
 		rd.forward(request, response);

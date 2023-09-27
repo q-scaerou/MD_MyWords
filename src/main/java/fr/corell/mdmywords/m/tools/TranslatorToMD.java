@@ -222,8 +222,9 @@ public class TranslatorToMD {
 			}
 			
 		}
-		
-		htmlText = htmlText.substring(0, htmlText.indexOf("</div>"));
+		if (htmlText.indexOf("</div>") != -1) {
+			htmlText = htmlText.substring(0, htmlText.indexOf("</div>"));
+		}
 		
 		return htmlText;
 		
