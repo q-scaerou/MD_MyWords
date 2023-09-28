@@ -7,7 +7,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import fr.corell.mdmywords.m.bll.UserManager;
 
 
 public class Home extends HttpServlet {

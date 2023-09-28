@@ -8,8 +8,6 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.List;
 
 import fr.corell.mdmywords.m.tools.TranslatorToMD;
 

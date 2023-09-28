@@ -3,7 +3,6 @@ package fr.corell.mdmywords.m.bll;
 import java.time.LocalDate;
 import java.util.List;
 
-import fr.corell.mdmywords.m.bo.Note;
 import fr.corell.mdmywords.m.bo.Notebook;
 import fr.corell.mdmywords.m.dal.DAOFactory;
 
