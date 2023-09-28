@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +24,11 @@
 	<link rel="stylesheet" type="text/css" href="./resources/css/style.css" />
 	<link rel="icon" type="image/x-icon" href="./resources/tempFavicon.ico">
 	<script src="./resources/js/editor.js" defer></script>
+	
+	<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+	crossorigin="anonymous"></script>
 	
 </head>
 
@@ -49,10 +55,11 @@
 						data-bs-toggle="dropdown" aria-expanded="false"> Recent
 							notebooks </a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">nb 1</a></li>
-							<li><a class="dropdown-item" href="#">nb 2</a></li>
+							<c:forEach items="${recentNB}" var="nb">
+								<li><a class="dropdown-item" href="#">${nb.title}</a></li>
+							</c:forEach>
 							<li><hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="#">All nb</a></li>
+							<li><a class="dropdown-item" href="notebooks">All notebooks</a></li>
 						</ul></li>
 
 				</ul>

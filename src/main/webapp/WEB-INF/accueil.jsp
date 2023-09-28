@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,12 +44,12 @@
 						data-bs-toggle="dropdown" aria-expanded="false"> Recent
 							notebooks </a>
 						<ul class="dropdown-menu">
-							<li><a class="dropdown-item" href="#">nb 1</a></li>
-							<li><a class="dropdown-item" href="#">nb 2</a></li>
+							<c:forEach items="${recentNB}" var="nb">
+								<li><a class="dropdown-item" href="#">${nb.title}</a></li>
+							</c:forEach>
 							<li><hr class="dropdown-divider"></li>
-							<li><a class="dropdown-item" href="#">All nb</a></li>
+							<li><a class="dropdown-item" href="notebooks">All notebooks</a></li>
 						</ul></li>
-
 				</ul>
 				<form class="d-flex" role="search">
 					<input class="form-control me-3" type="search"

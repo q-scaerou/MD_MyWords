@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import fr.corell.mdmywords.m.bll.NoteBookManager;
 import fr.corell.mdmywords.m.bo.Notebook;
 import fr.corell.mdmywords.m.dal.DAOFactory;
 
@@ -20,7 +21,8 @@ public class Notebooks extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// TODO selectAll on Notebooks
+		List<Notebook> recentNB = NoteBookManager.getInstance().selectRecent();
+		request.setAttribute("recentNB", recentNB);
 		
 		List<Notebook> notebooks = new ArrayList<>();
 		

@@ -1,7 +1,7 @@
 package fr.corell.mdmywords.m.bo;
 
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class Notebook implements Serializable {
@@ -11,8 +11,8 @@ public class Notebook implements Serializable {
 	// ATTRIBUTES
 	private int id;
 	private String title;
-	private LocalDate creationDate;
-	private LocalDate modificationDate;
+	private LocalDateTime creationDate;
+	private LocalDateTime modificationDate;
 	private String link;
 	private Group group;
 	private boolean isActive;
@@ -32,16 +32,16 @@ public class Notebook implements Serializable {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public LocalDate getCreationDate() {
+	public LocalDateTime getCreationDate() {
 		return creationDate;
 	}
-	public void setCreationDate(LocalDate creationDate) {
+	public void setCreationDate(LocalDateTime creationDate) {
 		this.creationDate = creationDate;
 	}
-	public LocalDate getModificationDate() {
+	public LocalDateTime getModificationDate() {
 		return modificationDate;
 	}
-	public void setModificationDate(LocalDate modificationDate) {
+	public void setModificationDate(LocalDateTime modificationDate) {
 		this.modificationDate = modificationDate;
 	}
 	public String getLink() {

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.corell.mdmywords.m.bll.NoteBookManager;
+import fr.corell.mdmywords.m.bo.Notebook;
 import fr.corell.mdmywords.m.tools.TranslatorToMD;
 
 
@@ -18,6 +19,9 @@ public class Editor extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		List<Notebook> recentNB = NoteBookManager.getInstance().selectRecent();
+		request.setAttribute("recentNB", recentNB);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/editor.jsp");
 		rd.forward(request, response);
@@ -40,7 +44,7 @@ public class Editor extends HttpServlet {
 			System.out.println("notecontent: " + request.getParameter("rawText" + i));
 		}
 		System.out.println(notesContents);
-		NoteBookManager.getInstance().insert(notebookTitle, creationDate.toLocalDate(), notesContents);
+		NoteBookManager.getInstance().insert(notebookTitle, creationDate, notesContents);
 		
 				
 		RequestDispatcher rd = request.getRequestDispatcher("notebooks");

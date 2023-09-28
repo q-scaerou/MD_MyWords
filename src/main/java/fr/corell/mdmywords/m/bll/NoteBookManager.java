@@ -1,6 +1,6 @@
 package fr.corell.mdmywords.m.bll;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import fr.corell.mdmywords.m.bo.Notebook;
@@ -21,8 +21,16 @@ public class NoteBookManager {
 		
 	}
 	
-	public Notebook insert(String title, LocalDate creationDate, List<String> notesContent) {
+	public Notebook insert(String title, LocalDateTime creationDate, List<String> notesContent) {
 		return DAOFactory.getNoteBookDAO().insert(title, creationDate, notesContent);
+	}
+	
+	public List<Notebook> selectRecent() {
+		return DAOFactory.getNoteBookDAO().selectRecent();
+	}
+	
+	public Notebook select(int id) {
+		return DAOFactory.getNoteBookDAO().select(id);
 	}
 	
 }
