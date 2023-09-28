@@ -76,7 +76,7 @@
 		  <p>Your text here!</p>
 		</div>
 		
-		<input type="hidden" value="" id="rawText1" name="rawText1">
+		<input id="rawText1" name="rawText1" value="" type="hidden" >
 		<input type="hidden" value=1 id="nbPage" name="nbPage">
 		<div class="my-5">
 			<button class="btn btn-success" type="button" onclick="getEditorContent()">Enregistrer la note</button>

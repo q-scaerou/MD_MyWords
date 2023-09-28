@@ -25,9 +25,9 @@
 			<tbody>
 				<c:forEach items="${notebooks}" var="notebook">
 					<tr>
-						<td>${notebook.notebookName }</td>
-						<td></td>
-						<td>${notebook.idNotebook }</td>
+						<td>${notebook.title}</td>
+						<td>${notebook.creationDate}</td>
+						<td>${notebook.id}</td>
 						<td>
 							<form>
 								<button class="btn btn-outline-dark rounded-circle"><i class="bi bi-book"></i></button>

@@ -2,6 +2,7 @@ package fr.corell.mdmywords.m.bo;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Notebook implements Serializable {
 
@@ -15,6 +16,7 @@ public class Notebook implements Serializable {
 	private String link;
 	private Group group;
 	private boolean isActive;
+	private List<Note> notes;
 	
 	
 	// GETTERS AND SETTERS
@@ -59,6 +61,17 @@ public class Notebook implements Serializable {
 	}
 	public void setIsActive(boolean isActive) {
 		this.isActive = isActive;
+	}
+	public List<Note> getNotes() {
+		return notes;
+	}
+	public void setNotes(List<Note> notes) {
+		this.notes = notes;
+	}
+	
+	// SPECIFIC METHODS
+	public void addNote(Note note) {
+		notes.add(note);
 	}
 	
 	
