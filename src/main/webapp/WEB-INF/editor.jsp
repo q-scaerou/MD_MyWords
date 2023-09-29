@@ -58,6 +58,9 @@
 							<c:forEach items="${recentNB}" var="nb">
 								<li><a class="dropdown-item" href="#">${nb.title}</a></li>
 							</c:forEach>
+							<c:if test="${empty recentNB}">
+								<li class="text-danger">No notebook found</li>
+							</c:if>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="notebooks">All notebooks</a></li>
 						</ul></li>

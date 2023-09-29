@@ -34,7 +34,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item"><a class="nav-link active"
-						aria-current="page" href="#">Home</a></li>
+						aria-current="page" href="home">Home</a></li>
 					<li class="nav-item"><a class="nav-link" href="editor">New
 							notebook</a></li>
 					<li class="nav-item"><a class="nav-link" href="notebooks">My
@@ -47,6 +47,9 @@
 							<c:forEach items="${recentNB}" var="nb">
 								<li><a class="dropdown-item" href="#">${nb.title}</a></li>
 							</c:forEach>
+							<c:if test="${empty recentNB}">
+								<li class="text-danger">No notebook found</li>
+							</c:if>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="notebooks">All notebooks</a></li>
 						</ul></li>
