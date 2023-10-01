@@ -73,6 +73,9 @@ public class TranslatorToMD {
 		htmlText = htmlText.replace("<em>", htmlElementToMD.get("<em>"));
 		htmlText = htmlText.replace("</em>", htmlElementToMD.get("</em>"));
 		
+		// TODO Add replace for <ul></ul> and before replace " <" par "< ... "
+		// TODO repair save file to desktop cause it doesn't work.
+		
 		// Replacing block quote
 		htmlText = htmlText.replace("<blockquote>", htmlElementToMD.get("<blockquote>"));
 		htmlText = htmlText.replace("</blockquote>", htmlElementToMD.get("</blockquote>"));
