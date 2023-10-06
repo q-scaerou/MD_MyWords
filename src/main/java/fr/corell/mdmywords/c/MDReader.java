@@ -1,5 +1,6 @@
 package fr.corell.mdmywords.c;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,7 +12,10 @@ public class MDReader extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/reader.jsp");
+		rd.forward(request, response);
+		
 	}
 
 	

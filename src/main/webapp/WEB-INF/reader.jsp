@@ -61,33 +61,9 @@
 						<i class="bi bi-search"></i>
 					</button>
 				</form>
-				<ul class="navbar-nav me-auto mb-2 mb-lg-0" style="border=solid 1px blue">
-					<li class="nav-item"><a class="nav-link d-flex justify-content-end"
-						aria-current="page" href="home"><i class="bi bi-person-circle"></i></a></li>
-				</ul>
 			</div>
 		</div>
 	</nav>
-	<div class="justify-content-center" style="border:solid 1px red;">
-		<div class="w-75 mx-auto my-5" style="border:solid 1px green;">
-			<div class="text-center">
-				<h2>Concept</h2>
-			</div>
-			<div class="pl-5">
-				<p>MarkDown My Words aims to provide a simple writing experience.</p>
-				<p>
-					Using the quill API, it provides a text editor to simply write notes online and group them in a notebook.
-					The purpose of this application is also to be able to download theses notes and/or notebooks in the MarkDown format.
-				</p>
-				<p>
-					The application also aims to offer an efficient and easy to use MarkDown reader for uploaded files.
-				</p>
-				<p>
-					To me, it's a very useful tool to take and organize my notes as well as an interesting exercise to develop 
-					my skills when using Strings.
-				</p>
-			</div>
-		</div>
-	</div>
+
 </body>
 </html>
